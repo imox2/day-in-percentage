@@ -4,8 +4,8 @@
   "manifest_version": 2,
   "description": "A chrome extension to show stats based on paytm purchase history.",
   "icons": {
-    "16": "images/favicon-16.png",
-    "128": "images/favicon-128.png"
+    "16": "images/sunset-16.png",
+    "128": "images/sunset-128.png"
   },
   "default_locale": "en",
   "background": {
@@ -23,8 +23,8 @@
   ],
   "browser_action": {
     "default_icon": {
-      "16": "images/favicon-16.png",
-      "128": "images/favicon-128.png"
+      "16": "images/sun-16.png",
+      "128": "images/sun-128.png"
     },
     "default_title": "day in percentage",
     "default_popup": "popup.html"

@@ -1,0 +1,36 @@
+{
+  "name": "paytm history",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "A chrome extension to show stats based on paytm purchase history.",
+  "icons": {
+    "16": "images/favicon-16.png",
+    "128": "images/favicon-128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    // "scripts": [
+    //   "background.bundle.js"
+    // ]
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "storage",
+    "webNavigation" ,
+    "*://paytm.com/*",
+    "*://*.paytm.com/*",
+    "cookies"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "images/favicon-16.png",
+      "128": "images/favicon-128.png"
+    },
+    "default_title": "day in percentage",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "web_accessible_resources": [
+    "images/*.png"
+  ]
+}

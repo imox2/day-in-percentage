@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "paytm history",
+    "description": "A chrome extension to show stats based on paytm purchase history."
+  },
+  "appDescription": {
+    "message": "paytm history",
+    "description": "A chrome extension to show stats based on paytm purchase history."
+  }
+}

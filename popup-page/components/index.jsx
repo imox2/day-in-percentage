@@ -1,7 +1,5 @@
 import React from 'react';
-import "tabler-react/dist/Tabler.css";
 import styled, { css,keyframes } from "styled-components";
-import { Grid, Card, Avatar,Site, Nav, Header, Page,StatsCard } from "tabler-react";
 import { Timer } from "../../src/utils/time";
 
 const timer = new Timer();
@@ -64,9 +62,62 @@ export default class  MediaControlCard extends React.Component{
         position: relative;
         color: white;
         font-weight: bold;
-          top: -2.4em;
-          right: -3.2em;
+          top: -2em;
+          right: -3.9em;
       `;
+
+      const Row = styled.div`
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          margin-right: 0.25rem;
+          margin-left: 1.30rem;
+      `; 
+
+      const RowButton = styled.div`
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          padding-left: 3.3rem;
+      `;
+
+      const SpanDiv = styled.div`
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color:white
+      `;
+
+      const Avatar = styled.span`
+        background-color: rgba(0, 0, 0, .4);
+        width: 12rem !important;
+        height: 12rem !important;
+        line-height: 11rem !important;
+        font-weight: bold !important;
+        font-size: 5rem !important;
+        margin-top: 1rem;
+        margin-right: 2.7rem;
+        margin-left: 2rem;
+        margin-bottom: -3rem;
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        border-radius: 50%;
+        display: inline-block;
+
+        position: relative;
+        text-align: center;
+        color: white;
+        font-weight: 600;
+        vertical-align: bottom;
+        font-size: 0.875rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    `;
 
 
       // Here we create a component that will rotate everything we pass in over two seconds
@@ -74,24 +125,41 @@ export default class  MediaControlCard extends React.Component{
         
         background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171)) 0% 0% / 400% 400%;
         animation: ${keyframe} 15s ease 0s infinite normal none running;
-        padding: 2rem 1rem;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
         font-size: 1.2rem;
+        display: block;
       `;
+
+      const Link = styled.a`
+        :hover {
+          text-decoration: underline;;
+        }
+        color:white;
+        text-decoration:none;
+        position:relative;
+        top:-0.5rem;
+      `;
+
 
       return(
         <Rotate>
-          <Grid.Row cards alignItems="center">
+          <RowButton>
                 <Button onClick={() => this.selectTimeType("y")} truth={(this.state.selectedTimeType=="y")?1:0}> Year </Button>
                 <Button onClick={() => this.selectTimeType("t")}  truth={(this.state.selectedTimeType=="t")?1:0}> Today </Button>
                 <Button onClick={() => this.selectTimeType("m")}  truth={(this.state.selectedTimeType=="m")?1:0}> Month </Button>
-          </Grid.Row>
+          </RowButton>
 
-          <Grid.Row cards  alignItems="center">
-              <Avatar size="xxl" color="black-transparent">{this.state.percentage}
+          <Row>
+              <Avatar>
+                {this.state.percentage}
               </Avatar> 
               <H3>percent</H3>
-        </Grid.Row>
-          
+        </Row>
+          <SpanDiv>
+            <span style={{color: "black","font-size": "2rem"}}>&#9829;</span>
+            <Link href="https://nosemantic.com" target="_blank"> Nosemantic</Link> 
+          </SpanDiv>
         </Rotate>
       );
     }

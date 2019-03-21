@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css,keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Timer } from "../../src/utils/time";
 
 const timer = new Timer();
@@ -45,17 +45,6 @@ export default class  MediaControlCard extends React.Component{
         font-weight: bold;
         margin: 0.19em;
         padding: 0.25em 1em;
-      `;
-
-
-      const Circle = styled.div`
-        height: 500px;
-        width: 500px;
-        border-radius: 50%;
-        color: white;
-        background-color:rgba(0, 0, 0, .4);
-        display: inline-block;
-            opacity: 0.2;
       `;
 
       const H3 = styled.h3`
@@ -120,8 +109,7 @@ export default class  MediaControlCard extends React.Component{
     `;
 
 
-      // Here we create a component that will rotate everything we pass in over two seconds
-      const Rotate = styled.div`
+      const AnimatedDiv = styled.div`
         
         background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171)) 0% 0% / 400% 400%;
         animation: ${keyframe} 15s ease 0s infinite normal none running;
@@ -143,7 +131,7 @@ export default class  MediaControlCard extends React.Component{
 
 
       return(
-        <Rotate>
+        <AnimatedDiv>
           <RowButton>
                 <Button onClick={() => this.selectTimeType("y")} truth={(this.state.selectedTimeType=="y")?1:0}> Year </Button>
                 <Button onClick={() => this.selectTimeType("t")}  truth={(this.state.selectedTimeType=="t")?1:0}> Today </Button>
@@ -160,7 +148,7 @@ export default class  MediaControlCard extends React.Component{
             <span style={{color: "black","font-size": "2rem"}}>&#9829;</span>
             <Link href="https://nosemantic.com" target="_blank"> Nosemantic</Link> 
           </SpanDiv>
-        </Rotate>
+        </AnimatedDiv>
       );
     }
 }
